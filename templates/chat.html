@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div>
+        {%for chatbot in chat_history %}
+            <p><strong>{{ chatbot.role }}:</strong> {{ chatbot.content }}</p>
+        {%endfor%}
+        <form action="/chat" method="POST">
+            <input type="text" name="user_input" id="message" placeholder="Type your message here">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
